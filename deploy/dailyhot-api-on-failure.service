@@ -1,0 +1,6 @@
+[Unit]
+Description=DailyHotApi failure logger
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/lib/dailyhot/on-failure.sh

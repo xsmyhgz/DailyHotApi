@@ -1,0 +1,22 @@
+[Unit]
+Description=DailyHot API (imsyy/DailyHotApi fork)
+After=network-online.target
+Wants=network-online.target
+
+OnFailure=dailyhot-api-on-failure.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/dailyhot-api
+EnvironmentFile=/opt/dailyhot-api/.env
+Environment=NODE_ENV=docker
+ExecStart=/usr/bin/node /opt/dailyhot-api/dist/src/index.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=true
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

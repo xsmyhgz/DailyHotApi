@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api" }
+  ],
+  "buildCommand": null,
+  "outputDirectory": "public",
+  "framework": null,
+  "installCommand": "npm install --legacy-peer-deps"
+}
